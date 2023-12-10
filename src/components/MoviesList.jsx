@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import placeholderImg from "../assets/images/placeholder-img.png";
+import "../styles/movielist.css";
 
 const MoviesList = (props) => {
   // destructuring props
@@ -9,11 +11,15 @@ const MoviesList = (props) => {
       {movies &&
         movies.map((movie, index) => (
           <Link to={`/${movie.imdbID}`}>
-            <div key={`movie-${index}`} className="movie-container">
-              <img src={movie.Poster} alt={`${movie.Title}-poster`} />
-              <p>{movie.Title}</p>
-              <p>{movie.Type}</p>
-              <p>{movie.Year}</p>
+            <div key={`movie-${index}`} className="movies-container">
+              <img
+                src={movie.Poster === "N/A" ? placeholderImg : movie.Poster}
+                alt={`${movie.Title} poster`}
+                id="movie-poster"
+              />
+              <p id="movie-title">{movie.Title}</p>
+              <p id="movie-type">{movie.Type}</p>
+              <p id="movie-year">{movie.Year}</p>
             </div>
           </Link>
         ))}

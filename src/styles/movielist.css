@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+}
+
+.movies-list {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.movies-container {
+  width: 350px;
+  height: 550px;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.4s ease-in-out;
+}
+
+#movie-poster {
+  border-radius: 10px;
+  width: 300px;
+  height: 450px;
+}
+
+#movie-title,
+#movie-type,
+#movie-year {
+  padding: 5px;
+  text-decoration: none;
+  color: var(--primary-text);
+  font-size: 1.1rem;
+}
+
+#movie-type,
+#movie-year {
+  color: var(--secondary-text);
+}

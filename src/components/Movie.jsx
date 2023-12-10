@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import placeholderImg from "../assets/images/placeholder-img.png";
+import "../styles/movie.css";
 
 const Movie = () => {
   const [movie, setMovie] = useState("");
@@ -26,35 +28,50 @@ const Movie = () => {
 
   return (
     <div className="movie-container">
-      <h1>{movie.Title}</h1>
-      <img src={movie.Poster} alt={`${movie.Title}-poster`} />
-      <p>{movie.Actors}</p>
-      <p>{movie.Awards}</p>
-      <p>{movie.BoxOffice}</p>
-      <p>{movie.Country}</p>
-      <p>{movie.DVD}</p>
-      <p>{movie.Director}</p>
-      <p>{movie.Genre}</p>
-      <p>{movie.Language}</p>
-      <p>{movie.Metascore}</p>
-      <p>{movie.Plot}</p>
-      <p>{movie.Production}</p>
-      <p>{movie.Rated}</p>
-      <p>
-        {movie.Ratings.map((rating) => (
-          <div>
-            <p>{rating.Source}</p>
-            <p>{rating.Value}</p>
-          </div>
-        ))}
-      </p>
-      <p>{movie.Released}</p>
-      <p>{movie.Runtime}</p>
-      <p>{movie.Type}</p>
-      <p>{movie.Writer}</p>
-      <p>{movie.Year}</p>
-      <p>{movie.imdbRating}</p>
-      <p>{movie.imdbVotes}</p>
+      <div id="movie-poster">
+        <img
+          src={movie.Poster === "N/A" ? placeholderImg : movie.Poster}
+          alt={`${movie.Title} poster`}
+        />
+      </div>
+
+      <div id="movie-details">
+        <h1>{movie.Title}</h1>
+        <div id="basic-info">
+          <p>{movie.Year}</p>
+          <p>{movie.Runtime}</p>
+          <p>{movie.Type}</p>
+        </div>
+        <p>imdbRating: {movie.imdbRating}</p>
+        <p>imdbVotes: {movie.imdbVotes}</p>
+        <p>{movie.Plot}</p>
+
+        <hr />
+
+        <p>Cast: {movie.Actors}</p>
+        <p>Released: {movie.Released}</p>
+        <p>Awards: {movie.Awards}</p>
+        <p>{movie.BoxOffice && `Box Office: ${movie.BoxOffice}`}</p>
+        <p>Country: {movie.Country}</p>
+        <p>{movie.DVD && `DVD : ${movie.DVD}`}</p>
+        <p>Writer: {movie.Writer}</p>
+        <p>{movie.Director === "N/A" ? "" : `Director: ${movie.Director}`}</p>
+        <p>Genre: {movie.Genre}</p>
+        <p>Languages: {movie.Language}</p>
+        <p>
+          {movie.Metascore === "N/A" ? "" : `Metascore: ${movie.Metascore}`}
+        </p>
+        <p>{movie.Production && `Production: ${movie.Production}`}</p>
+        <p>Rated: {movie.Rated}</p>
+        <p>
+          {movie.Ratings?.map((rating) => (
+            <div>
+              <p>{rating.Source}</p>
+              <p>{rating.Value}</p>
+            </div>
+          ))}
+        </p>
+      </div>
     </div>
   );
 };

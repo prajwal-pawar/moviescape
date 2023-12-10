@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import MoviesList from "./MoviesList";
+import "../styles/home.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
@@ -28,7 +29,7 @@ const Home = () => {
       <div className="search">
         <input
           type="text"
-          placeholder="Enter movie name"
+          placeholder="Enter the movie/series name"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
