@@ -14,21 +14,6 @@
   margin: 20px 20px 20px 0px;
 }
 
-#movie-details {
-  flex: 1;
-  margin: 10px 0px 0px 40px;
-}
-
-#basic-info {
-  display: flex;
-  flex-direction: row;
-}
-
-#basic-info p {
-  font-size: 1.2rem;
-  margin-right: 30px;
-}
-
 .movie-container h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -49,4 +34,62 @@
 .movie-container img[src$="placeholder-img.png"] {
   filter: grayscale(100%);
   opacity: 0.7;
+}
+
+#movie-details {
+  flex: 1;
+  margin: 10px 0px 0px 40px;
+}
+
+#basic-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#basic-info p {
+  font-size: 1.2rem;
+  margin-right: 30px;
+}
+
+#imdb-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#imdb-info p {
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  width: 250px;
+  padding: 10px 0px;
+  text-align: center;
+  margin-right: 30px;
+  font-size: 1.2rem;
+  color: var(--primary-text);
+}
+
+#other-ratings {
+  display: flex;
+}
+
+#other-ratings-container {
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+  width: 250px;
+  margin-right: 30px;
+  padding: 10px 0px;
+  text-align: center;
+}
+
+#other-ratings p {
+  font-size: 1.2rem;
+  color: var(--primary-text);
+}
+
+#plot {
+  font-size: 1.2rem;
+  color: var(--primary-text);
+}
+
+hr {
+  margin: 20px 0px;
 }

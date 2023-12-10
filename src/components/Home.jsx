@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import MoviesList from "./MoviesList";
+import Loader from "./Loader";
 import "../styles/home.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
   const [movies, setMovies] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     // omdb api url
@@ -12,10 +14,13 @@ const Home = () => {
 
     // fetching movies from api
     const fetchMovies = async () => {
+      setLoading(true);
+
       const response = await fetch(url);
       const data = await response.json();
 
       setMovies(data.Search);
+      setLoading(false);
     };
 
     console.log(movies);
@@ -36,7 +41,7 @@ const Home = () => {
       </div>
 
       {/* movies list */}
-      <MoviesList movies={movies} />
+      <MoviesList movies={movies} loading={loading} />
     </div>
   );
 };

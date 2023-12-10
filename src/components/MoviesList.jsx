@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
 import placeholderImg from "../assets/images/placeholder-img.png";
 import "../styles/movielist.css";
 
 const MoviesList = (props) => {
   // destructuring props
-  const { movies } = props;
+  const { movies, loading } = props;
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="movies-list">
@@ -18,8 +23,9 @@ const MoviesList = (props) => {
                 id="movie-poster"
               />
               <p id="movie-title">{movie.Title}</p>
-              <p id="movie-type">{movie.Type}</p>
-              <p id="movie-year">{movie.Year}</p>
+              <p id="movie-type">
+                {movie.Type} ({movie.Year})
+              </p>
             </div>
           </Link>
         ))}

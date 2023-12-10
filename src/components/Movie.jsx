@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 import placeholderImg from "../assets/images/placeholder-img.png";
 import "../styles/movie.css";
 
 const Movie = () => {
   const [movie, setMovie] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // getting movie id from url params
   const { movieId } = useParams();
@@ -15,16 +17,23 @@ const Movie = () => {
 
     // fetching movie information from movie id
     const fetchMovie = async () => {
+      setLoading(true);
+
       const response = await fetch(url);
       const data = await response.json();
 
       setMovie(data);
+      setLoading(false);
     };
 
     fetchMovie();
   }, [movieId]);
 
   console.log(movie);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="movie-container">
@@ -42,9 +51,20 @@ const Movie = () => {
           <p>{movie.Runtime}</p>
           <p>{movie.Type}</p>
         </div>
-        <p>imdbRating: {movie.imdbRating}</p>
-        <p>imdbVotes: {movie.imdbVotes}</p>
-        <p>{movie.Plot}</p>
+        <div id="imdb-info">
+          <p>imdb: {movie.imdbRating}</p>
+          <p>Votes: {movie.imdbVotes}</p>
+        </div>
+        <div id="other-ratings">
+          {movie.Ratings?.map((rating) => (
+            <div id="other-ratings-container">
+              <p>{rating.Source}</p>
+              <p>{rating.Value}</p>
+            </div>
+          ))}
+        </div>
+
+        <p id="plot">{movie.Plot}</p>
 
         <hr />
 
@@ -63,14 +83,14 @@ const Movie = () => {
         </p>
         <p>{movie.Production && `Production: ${movie.Production}`}</p>
         <p>Rated: {movie.Rated}</p>
-        <p>
+        {/* <p>
           {movie.Ratings?.map((rating) => (
             <div>
               <p>{rating.Source}</p>
               <p>{rating.Value}</p>
             </div>
           ))}
-        </p>
+        </p> */}
       </div>
     </div>
   );

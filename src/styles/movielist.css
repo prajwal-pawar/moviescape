@@ -36,6 +36,10 @@ a {
   font-size: 1.1rem;
 }
 
+#movie-title {
+  font-size: 1.3rem;
+}
+
 #movie-type,
 #movie-year {
   color: var(--secondary-text);
