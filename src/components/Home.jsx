@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import MoviesList from "./MoviesList";
-import Loader from "./Loader";
 import "../styles/home.css";
 
 const Home = () => {
   const [search, setSearch] = useState("");
-  const [movies, setMovies] = useState("");
+  const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -14,13 +13,18 @@ const Home = () => {
 
     // fetching movies from api
     const fetchMovies = async () => {
-      setLoading(true);
+      try {
+        setLoading(true);
 
-      const response = await fetch(url);
-      const data = await response.json();
+        const response = await fetch(url);
+        const data = await response.json();
 
-      setMovies(data.Search);
-      setLoading(false);
+        setMovies(data.Search);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching movies:", error);
+        setLoading(false);
+      }
     };
 
     console.log(movies);

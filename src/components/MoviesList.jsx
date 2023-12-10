@@ -15,7 +15,7 @@ const MoviesList = (props) => {
     <div className="movies-list">
       {movies &&
         movies.map((movie, index) => (
-          <Link to={`/${movie.imdbID}`}>
+          <Link to={`/${movie.imdbID}`} key={`movie-${index}`} id="movie-link">
             <div key={`movie-${index}`} className="movies-container">
               <img
                 src={movie.Poster === "N/A" ? placeholderImg : movie.Poster}

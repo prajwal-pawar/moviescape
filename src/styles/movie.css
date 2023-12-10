@@ -57,7 +57,8 @@
 }
 
 #imdb-info p {
-  border: 1px solid #f5f5f5;
+  border: 1px solid #414141;
+  background-color: #414141;
   border-radius: 10px;
   width: 250px;
   padding: 10px 0px;
@@ -72,7 +73,8 @@
 }
 
 #other-ratings-container {
-  border: 1px solid #f5f5f5;
+  border: 1px solid #414141;
+  background-color: #414141;
   border-radius: 10px;
   width: 250px;
   margin-right: 30px;
