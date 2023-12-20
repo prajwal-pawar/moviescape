@@ -26,7 +26,7 @@ const Home = () => {
           setMovies(data.Search);
           setLoading(false);
         } catch (err) {
-          console.error("Error fetching movies:", error);
+          console.error("Error fetching movies:", err);
           setLoading(false);
         }
       };
