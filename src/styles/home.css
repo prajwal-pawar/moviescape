@@ -26,3 +26,10 @@
 .search input:focus {
   width: 70%;
 }
+
+.initial-result-message {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--secondary-text);
+}

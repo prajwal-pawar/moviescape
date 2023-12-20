@@ -53,7 +53,11 @@ const Home = () => {
       </div>
 
       {/* movies list */}
-      <MoviesList movies={movies} loading={loading} />
+      {movies ? (
+        <MoviesList movies={movies} loading={loading} />
+      ) : (
+        <h1 className="initial-result-message">No Search Results</h1>
+      )}
     </div>
   );
 };
