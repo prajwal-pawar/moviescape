@@ -33,3 +33,32 @@
   font-size: 1.5rem;
   color: var(--secondary-text);
 }
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 50px 0px 50px 0px;
+}
+
+.page-number {
+  color: var(--primary-text);
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.page-btn {
+  padding: 10px 20px;
+  margin: 0px 20px;
+  width: 150px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 7px;
+  background-color: var(--primary-text);
+  color: var(--primary-dark-background);
+  font-weight: bold;
+}
+
+.page-btn:hover {
+  cursor: pointer;
+}
