@@ -50,6 +50,7 @@ const Movie = () => {
           <p>{movie.Year}</p>
           <p>{movie.Runtime}</p>
           <p>{movie.Type}</p>
+          <p>{movie.Genre}</p>
         </div>
         <div id="imdb-info">
           <p>imdb: {movie.imdbRating}</p>

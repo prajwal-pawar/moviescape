@@ -6,23 +6,24 @@ a {
   margin: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .movies-container {
-  width: 350px;
-  height: 550px;
+  width: 300px;
+  /* height: 550px; */
   margin: 10px;
   padding: 20px;
   border: 1px solid transparent;
   border-radius: 10px;
   text-align: center;
-  transition: 0.4s ease-in-out;
+  background-color: var(--movie-card);
+  transition: background-color 0.4s ease-in-out;
 }
 
 .movies-container:hover {
-  background-color: #414141;
+  background-color: var(--secondary-background);
 }
 
 #movie-poster {
@@ -37,14 +38,16 @@ a {
   padding: 5px;
   text-decoration: none;
   color: var(--primary-text);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 #movie-title {
   font-size: 1.3rem;
+  margin-top: 10px;
 }
 
 #movie-type,
 #movie-year {
+  margin-top: 5px;
   color: var(--secondary-text);
 }

@@ -15,11 +15,12 @@
   height: 30px;
   width: 40%;
   padding: 5px 10px;
-  background-color: var(--primary-dark-background);
-  border: 2px solid var(--secondary-text);
+  background-color: var(--secondary-background);
+  border: 2px solid var(--secondary-accent-color);
   color: var(--primary-text);
   font-size: 16px;
   border-radius: 10px;
+  outline: none;
   transition: width 0.3s ease-in-out;
 }
 
@@ -42,9 +43,11 @@
 }
 
 .page-number {
+  background-color: var(--secondary-background);
   color: var(--primary-text);
   font-weight: bold;
-  padding-top: 10px;
+  padding: 10px 20px;
+  border-radius: 7px;
 }
 
 .page-btn {
@@ -54,11 +57,14 @@
   font-size: 1rem;
   border: none;
   border-radius: 7px;
-  background-color: var(--primary-text);
-  color: var(--primary-dark-background);
+  background-color: var(--secondary-background);
+  color: var(--primary-text);
   font-weight: bold;
+  transition: 0.3s ease-in-out;
 }
 
 .page-btn:hover {
   cursor: pointer;
+  background-color: var(--secondary-accent-color);
+  color: var(--primary-background);
 }
