@@ -6,13 +6,13 @@ a {
   margin: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .movies-container {
-  width: 300px;
-  /* height: 550px; */
+  width: 200px;
+  height: 380px;
   margin: 10px;
   padding: 20px;
   border: 1px solid transparent;
@@ -28,8 +28,8 @@ a {
 
 #movie-poster {
   border-radius: 10px;
-  width: 300px;
-  height: 450px;
+  width: 200px;
+  height: 300px;
 }
 
 #movie-title,
@@ -44,6 +44,11 @@ a {
 #movie-title {
   font-size: 1.3rem;
   margin-top: 10px;
+
+  /* text overflow */
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #movie-type,

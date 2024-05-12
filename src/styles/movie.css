@@ -8,7 +8,7 @@
   color: var(--primary-text);
 }
 
-.movie-container #movie-poster img {
+.movie-container #movie-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
@@ -16,7 +16,7 @@
 }
 
 .movie-container h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 10px;
 }
 

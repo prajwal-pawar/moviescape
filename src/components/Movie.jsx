@@ -37,7 +37,7 @@ const Movie = () => {
 
   return (
     <div className="movie-container">
-      <div id="movie-poster">
+      <div id="movie-image">
         <img
           src={movie.Poster === "N/A" ? placeholderImg : movie.Poster}
           alt={`${movie.Title} poster`}
@@ -57,8 +57,8 @@ const Movie = () => {
           <p>Votes: {movie.imdbVotes}</p>
         </div>
         <div id="other-ratings">
-          {movie.Ratings?.map((rating) => (
-            <div id="other-ratings-container">
+          {movie.Ratings?.map((rating, index) => (
+            <div id="other-ratings-container" key={index}>
               <p>{rating.Source}</p>
               <p>{rating.Value}</p>
             </div>
